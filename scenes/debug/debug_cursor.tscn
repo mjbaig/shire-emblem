@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfcrwkgippiq8"]
+
+[ext_resource type="Texture2D" uid="uid://dfykqmounpgs5" path="res://assets/tileset/debug/cursor.png" id="1_b1ijs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b1ijs")
+offset = Vector2(8, 8)

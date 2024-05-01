@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx6dctkjax8tm"]
+
+[ext_resource type="Texture2D" uid="uid://bugughwkkmwoq" path="res://assets/tileset/debug/attack-range.png" id="1_k1rq6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k1rq6")
+offset = Vector2(8, 8)

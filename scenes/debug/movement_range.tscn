@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://m47gjs3j7lod"]
+
+[ext_resource type="Texture2D" uid="uid://bphtc2hfsjs1q" path="res://assets/tileset/debug/movement-range.png" id="1_y47at"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y47at")
+offset = Vector2(8, 8)
