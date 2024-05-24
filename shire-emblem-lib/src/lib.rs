@@ -1,5 +1,4 @@
-use godot::engine::ISprite2D;
-use godot::engine::Sprite2D;
+use godot::engine::{ISprite2D, Sprite2D};
 use godot::prelude::*;
 
 struct ShireEmblemLib;
@@ -18,7 +17,7 @@ struct Player {
 #[godot_api]
 impl ISprite2D for Player {
     fn init(base: Base<Sprite2D>) -> Self {
-        godot_print!("Hello Wdorld!");
+        godot_print!("Hello!");
 
         Self {
             speed: 400.0,
@@ -30,5 +29,18 @@ impl ISprite2D for Player {
     fn physics_process(&mut self, delta: f64) {
         let radians = (self.angular_speed * delta) as f32;
         self.base_mut().rotate(radians);
+    }
+
+    fn to_string(&self) -> GString {
+        godot_print!("test");
+        format!("test").into()
+    }
+}
+
+#[godot_api]
+impl Player {
+    #[func]
+    fn test(&mut self) {
+        godot_print!("this worked");
     }
 }
