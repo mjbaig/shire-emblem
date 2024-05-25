@@ -1,4 +1,4 @@
-use godot::engine::{ISprite2D, Sprite2D};
+use godot::engine::{INode2D, Node2D};
 use godot::prelude::*;
 
 struct ShireEmblemLib;
@@ -7,40 +7,31 @@ struct ShireEmblemLib;
 unsafe impl ExtensionLibrary for ShireEmblemLib {}
 
 #[derive(GodotClass)]
-#[class(base=Sprite2D)]
-struct Player {
-    speed: f64,
-    angular_speed: f64,
-    base: Base<Sprite2D>,
+#[class(base=Node2D)]
+struct ShireEmblemStaticLibs {
+    base: Base<Node2D>,
 }
 
 #[godot_api]
-impl ISprite2D for Player {
-    fn init(base: Base<Sprite2D>) -> Self {
-        godot_print!("Hello!");
-
-        Self {
-            speed: 400.0,
-            angular_speed: std::f64::consts::PI,
-            base,
-        }
-    }
-
-    fn physics_process(&mut self, delta: f64) {
-        let radians = (self.angular_speed * delta) as f32;
-        self.base_mut().rotate(radians);
-    }
-
-    fn to_string(&self) -> GString {
-        godot_print!("test");
-        format!("test").into()
+impl INode2D for ShireEmblemStaticLibs {
+    fn init(base: Base<Node2D>) -> Self {
+        ShireEmblemStaticLibs { base }
     }
 }
 
 #[godot_api]
-impl Player {
+impl ShireEmblemStaticLibs {
     #[func]
     fn test(&mut self) {
         godot_print!("this worked");
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn it_works() {
+        assert_eq!(1, 1);
     }
 }
