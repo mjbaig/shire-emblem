@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var node = Player.new();
+	var node = ShireEmblemStaticLibs.new();
 	node.test();
 	pass # Replace with function body.
 

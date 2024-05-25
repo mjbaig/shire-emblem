@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyonwpqd1proq"]
+[gd_scene load_steps=2 format=3 uid="uid://c6o5o6gnd7ppl"]
 
 [ext_resource type="Texture2D" uid="uid://h73nrm63mmxo" path="res://icon.svg" id="1_tm7va"]
 
 [node name="Player" type="Player"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
 position = Vector2(561, 231)
 texture = ExtResource("1_tm7va")
+script = null
