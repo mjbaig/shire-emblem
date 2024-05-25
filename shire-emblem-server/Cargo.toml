@@ -1,0 +1,7 @@
+[package]
+name = "shire-emblem-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shire-emblem-server-lib = { path = "../shire-emblem-server-lib/" }
