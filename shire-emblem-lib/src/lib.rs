@@ -1,3 +1,5 @@
+use std::usize;
+
 use godot::engine::{INode2D, Node2D};
 use godot::prelude::*;
 
@@ -24,6 +26,34 @@ impl ShireEmblemStaticLibs {
     #[func]
     fn test(&mut self) {
         godot_print!("this worked");
+    }
+
+    #[func]
+    fn array_test(&mut self, tile_map: Array<i32>, row_size: i32, column_size: i32) -> Array<i32> {
+        let mut matrix = vec![vec![-1; row_size as usize]; column_size as usize];
+
+        let mut i = 0;
+
+        for x in 0..column_size {
+            for y in 0..row_size {
+                if tile_map.len() > i {
+                    matrix[x as usize][y as usize] = tile_map.get(i);
+                    i = i + 1;
+                }
+            }
+        }
+
+        let mut output_map: Array<i32> = array![];
+
+        for x in 0..column_size {
+            for y in 0..row_size {
+                output_map.push(matrix[x as usize][y as usize]);
+            }
+        }
+
+        godot_print!("{}, {}, {}", tile_map, row_size, column_size);
+
+        output_map
     }
 }
 
