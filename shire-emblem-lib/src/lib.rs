@@ -2,6 +2,9 @@ use std::usize;
 
 use godot::engine::{INode2D, Node2D};
 use godot::prelude::*;
+use shire_emblem_server_lib::false_matrix::FalseMatrix;
+
+use std::ops::{Index, IndexMut};
 
 struct ShireEmblemLib;
 
@@ -30,24 +33,16 @@ impl ShireEmblemStaticLibs {
 
     #[func]
     fn array_test(&mut self, tile_map: Array<i32>, row_size: i32, column_size: i32) -> Array<i32> {
-        let mut matrix = vec![vec![-1; row_size as usize]; column_size as usize];
+        let tile_map_vec: Vec<i32> = tile_map.iter_shared().map(|val| val).collect();
 
-        let mut i = 0;
-
-        for x in 0..column_size {
-            for y in 0..row_size {
-                if tile_map.len() > i {
-                    matrix[x as usize][y as usize] = tile_map.get(i);
-                    i = i + 1;
-                }
-            }
-        }
+        let matrix: FalseMatrix =
+            FalseMatrix::new(tile_map_vec, row_size as usize, column_size as usize);
 
         let mut output_map: Array<i32> = array![];
 
         for x in 0..column_size {
             for y in 0..row_size {
-                output_map.push(matrix[x as usize][y as usize]);
+                output_map.push(matrix[(y as usize, x as usize)]);
             }
         }
 
