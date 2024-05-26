@@ -1,9 +1,10 @@
 use core::ops::{Index, IndexMut};
 
+#[derive(Debug)]
 pub struct FalseMatrix {
     data: Vec<i32>,
-    rows: usize,
-    cols: usize,
+    pub rows: usize,
+    pub cols: usize,
 }
 
 impl FalseMatrix {

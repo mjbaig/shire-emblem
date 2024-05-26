@@ -3,11 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var node = ShireEmblemStaticLibs.new();
+	var node = ShireEmblemStatefulLibs.new();
 	node.test();
 	var array: Array[int] = [1, 2, 3, 4];
+	node.set_tile_map(array, 2, 2);
+	print(node.get_player_range());
 	
-	print(node.array_test(array, 2, 2));
 	#pass # Replace with function body.
 
 
