@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyo8benjpbqo5"]
+
+[ext_resource type="Script" path="res://scripts/debug/debug_level.gd" id="1_guike"]
+[ext_resource type="PackedScene" uid="uid://blm7rp8e20027" path="res://scenes/debug/debug_level_tilemap.tscn" id="2_e7g02"]
+
+[node name="debug_level" type="Node2D" node_paths=PackedStringArray("tile_map")]
+script = ExtResource("1_guike")
+tile_map = NodePath("tile_map")
+
+[node name="tile_map" parent="." instance=ExtResource("2_e7g02")]
