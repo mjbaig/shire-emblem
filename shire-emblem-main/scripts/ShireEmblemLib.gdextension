@@ -8,5 +8,5 @@ linux.debug.x86_64 =     "res://../shire-emblem-lib/target/debug/lib/libshire-em
 linux.release.x86_64 =   "res://../shire-emblem-lib/target/release/lib/libshire-emblem-lib.so"
 windows.debug.x86_64 =   "res://../shire-emblem-lib/target/x86_64-pc-windows-gnu/debug/shire_emblem_lib.dll"
 windows.release.x86_64 = "res://../shire-emblem-lib/target/x86_64-pc-windows-gnu/release/shire_emblem_lib.dll"
-macos.debug.arm64 =      "res://../shire-emblem-lib/target/debug/libshire-emblem-lib.dylib"
-macos.release.arm64 =    "res://../shire-emblem-lib/target/release/libshire-emblem-lib.dylib"
+macos.debug.arm64 =      "res://../shire-emblem-lib/target/debug/libshire_emblem_lib.dylib"
+macos.release.arm64 =    "res://../shire-emblem-lib/target/release/libshire_emblem_lib.dylib"
